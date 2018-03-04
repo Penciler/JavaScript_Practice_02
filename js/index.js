@@ -21,5 +21,6 @@ class BaseCharacter {
     } 
   }
   die() {
+    this.alive-false;
   }
 }
