@@ -14,7 +14,11 @@ class BaseCharacter {
     character.getHurt(damage);
   }
   
-  getHurt() { 
+  getHurt(damage) { 
+    this.hp -= damage;
+    if(this.hp<=0){
+      this.die();
+    } 
   }
   die() {
   }
