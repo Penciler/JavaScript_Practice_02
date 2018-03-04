@@ -36,4 +36,17 @@ class Hero extends BaseCharacter {
   }
 }
 
+class Monster extends BaseCharacter {
+  constructor(name, hp, ap) {
+    super(name, hp, ap);
+    console.log("怪獸遇到 " + this.name + "了！");
+  }
+  attack(character) {
+    var damage = Math.random() * (this.ap / 2) + (this.ap / 2);
+    super.attack(character, Math.floor(damage));
+  }
+}
+
+
 var hero = new Hero("Bernard", 130, 30);
+var monster = new Monster("Skeleton", 130, 10);
