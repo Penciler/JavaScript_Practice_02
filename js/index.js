@@ -21,6 +21,19 @@ class BaseCharacter {
     } 
   }
   die() {
-    this.alive-false;
+    this.alive=false;
   }
 }
+
+class Hero extends BaseCharacter {
+  constructor(name, hp, ap) {
+    super(name, hp, ap);
+    console.log("召喚英雄 " + this.name + "！");
+  }
+  attack(character) {
+    var damage = Math.random() * (this.ap / 2) + (this.ap / 2);
+    super.attack(character, Math.floor(damage));
+  }
+}
+
+var hero = new Hero("Bernard", 130, 30);
