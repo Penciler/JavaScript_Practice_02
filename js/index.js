@@ -23,6 +23,11 @@ class BaseCharacter {
   die() {
     this.alive=false;
   }
+
+  updateHtml(hpElement, hurtElement) {
+    hpElement.textContent = this.hp;
+    hurtElement.style.width = (100 - this.hp / this.maxHp * 100) + "%";
+  }
 }
 
 class Hero extends BaseCharacter {
