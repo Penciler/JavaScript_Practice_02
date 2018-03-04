@@ -7,7 +7,11 @@ class BaseCharacter {
     this.ap=ap;
 
   }
-  attack() {
+  attack(character, damage) {
+    if(this.alive==false){
+      return;
+    }
+    character.getHurt(damage);
   }
   
   getHurt() { 
