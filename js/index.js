@@ -84,6 +84,15 @@ function addSkillEvent(){
   }
 }
 
+var rounds=10;
+function endTurn(){
+  rounds-=;
+  document.getElementById("round-num").textContent=rounds;
+  if(rounds<1){
+    
+  }
+}
+
 addSkillEvent();
 var hero = new Hero("Bernard", 130, 30);
 var monster = new Monster("Skeleton", 130, 10);
