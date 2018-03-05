@@ -137,15 +137,25 @@ function heroAttack() {
         monster.element.classList.remove("attacking");
         endTurn();
         if (hero.alive == false) {
-        
+          finish();
         } else {
           document.getElementsByClassName("skill-block")[0].style.display = "block";
         }
       }, 500);
     } else {
-      
+      finish();
     }
   }, 1100);
+}
+
+function finish() {
+  var dialog = document.getElementById("dialog")
+  dialog.style.display = "block";
+  if (monster.alive == false) {
+    dialog.classList.add("win");
+  } else {
+    dialog.classList.add("lose");
+  }
 }
 
 addSkillEvent();
