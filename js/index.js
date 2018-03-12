@@ -74,6 +74,10 @@ class Hero extends BaseCharacter {
     super.getHurt(damage);
     this.updateHtml(this.hpElement, this.hurtElement);
   }
+  heal(){
+    this.hp += 30;
+    this.updateHtml(this.hpElement, this.hurtElement);
+  }
 }
 
 class Monster extends BaseCharacter {
@@ -106,6 +110,11 @@ function addSkillEvent(){
   var skil = document.getElementById("skill");
   skill.onclick = function(){
     heroAttack();
+  }
+
+  var heal = document.getElementById("heal");
+  heal.onclick = function(){
+    heroHeal();
   }
 }
 
@@ -157,5 +166,11 @@ function finish() {
     dialog.classList.add("lose");
   }
 }
+
+function heroHeal(){
+  hero.heal();
+}
+
+
 
 addSkillEvent();
