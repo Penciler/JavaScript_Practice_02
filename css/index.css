@@ -155,8 +155,7 @@
   bottom: 150px;
 }
 
-#hero-image-block .skill-block,
-#hero-image-block .heal-block {
+#hero-image-block .skill-block{
   position: relative;
 }
 
@@ -164,6 +163,8 @@
 #hero-image-block .heal-image {
   width: 20%;
 }
+
+  
 
 
 /* 設定 #monster-image-block .character-image 左右反轉 */
