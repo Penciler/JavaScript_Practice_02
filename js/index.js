@@ -129,15 +129,27 @@ var hero = new Hero("Bernard", 130, 30);
 var monster = new Monster("Skeleton", 130, 10);
 
 function addSkillEvent(){
-  var skil = document.getElementById("skill");
+  var skill = document.getElementById("skill");
   skill.onclick = function(){
     heroAttack();
   }
+
 
   var heal = document.getElementById("heal");
   heal.onclick = function(){
     heroHeal();
   }
+
+  document.onkeyup = function(event){
+    var hkey = event.keyCode;
+    if(hkey==65){
+      heroAttack();
+    }
+    else if(hkey==68){
+      heroHeal();
+    }
+  }
+
 }
 
 var rounds=10;
